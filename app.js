@@ -123,5 +123,46 @@ document.addEventListener("DOMContentLoaded", function () {
             gameActive = true;
             wart.style.animationPlayState = "running";
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const mario = document.querySelector('.mario');
+            const wart = document.querySelector('.obstacle');
+            const mobileControls = document.getElementById("mobile-controls");
+        
+            // Detect if the device is mobile
+            function isMobileDevice() {
+                return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            }
+        
+            // Show mobile controls only if the user is on a mobile device
+            if (isMobileDevice()) {
+                mobileControls.classList.remove("hidden");
+                mobileControls.style.visibility = "visible";
+            }
+        
+            // Add event listeners for mobile buttons
+            document.getElementById("jump-btn").addEventListener("click", () => {
+                if (!mario.classList.contains("mario-jump")) {
+                    mario.classList.add("mario-jump");
+                    setTimeout(() => {
+                        mario.classList.remove("mario-jump");
+                    }, 600);
+                }
+            });
+        
+            document.getElementById("left-btn").addEventListener("click", () => {
+                let marioX = parseInt(window.getComputedStyle(mario).left);
+                if (marioX > 10) mario.style.left = (marioX - 90) + "px";
+            });
+        
+            document.getElementById("right-btn").addEventListener("click", () => {
+                let marioX = parseInt(window.getComputedStyle(mario).left);
+                if (marioX < window.innerWidth - mario.offsetWidth - 10) {
+                    mario.style.left = (marioX + 90) + "px";
+                }
+            });
+        });
+        
+
     });
 });
