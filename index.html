@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <div class="mario">🍄</div> 
+    <div class="obstacle wart"></div> 
+    <div class="game-over">
+      Game Over!
+    </div>
+    <button class="restart-btn">Restart</button>
+    <div id="score">Your score: 0</div>
+    <button id="start-btn">Start Game</button> 
+  </div>
+  <script src="app.js"></script>
+  <audio id="background-sound" src="sounds/bg-sound.mp3" loop></audio>
+  <audio id="jump-sound" src="sounds/mario-jump.mp3"></audio>
+  <audio id="gameover-sound" src="sounds/game-over.mp3"></audio>
+</body>
+</html>

@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+#game-container{
+    background-image: url(images/background.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 40px;
+    font-weight: bold;
+    color: red;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    animation: shake 0.5s ease-in-out;
+}
+
+.game-over.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.restart-btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: block;
+    margin-top: 20px;
+}
+
+.restart-btn.show {
+    opacity: 1;
+}
+
+#start-btn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #008000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+.mario{
+    background-image: url(images/mario.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 57px;
+    height: 70px;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+}
+
+.obstacle{
+    background-image: url(images/wart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 73px;
+    height: 80px;
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+}
+
+.wart{
+    animation: wart 5s linear infinite;
+}
+
+.mario-jump{
+    animation: mario 0.6s linear;
+}
+
+@keyframes mario{
+    0%{
+        bottom: 40px;
+    }
+    50%{
+        bottom: 200px;
+    }
+    100%{
+        bottom: 40px;
+    }
+}
+
+@keyframes wart{
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -10vw;
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
