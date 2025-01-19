@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const backgroundSound = document.getElementById('background-sound');
     const jumpSound = document.getElementById('jump-sound');
     const gameoverSound = document.getElementById('gameover-sound');
-    const mobileControls = document.getElementById("mobile-controls");
-
+    
     let score = 0;
     let cross = true;
     let gameActive = false;
@@ -124,17 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
         gameActive = true;
         wart.style.animationPlayState = "running";
     }
-
-    function updateMobileControls() {
-        if (window.innerWidth <= 768) {
-            mobileControls.style.visibility = "visible";
-        } else {
-            mobileControls.style.visibility = "hidden";
-        }
-    }
-
-    window.addEventListener("resize", updateMobileControls);
-    updateMobileControls();
 
     startBtn.addEventListener("click", startGame);
     restartBtn.addEventListener("click", restartGame);
