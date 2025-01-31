@@ -23,8 +23,8 @@ A simple Mario Run game built using **HTML, CSS, and JavaScript**. The game feat
 ## 🛠️ Setup & Usage
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/your-repo/mario-run-game.git
-   cd mario-run-game
+   git clone git@github.com:MonkeyDNaruto/marioGame.git
+   cd marioGame
    ```
 
 2. **Run the Game**
